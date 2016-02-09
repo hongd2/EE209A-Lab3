@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	
+	<script>
+		<!-- buzzer -->
+		var ip1="169.232.86.124:50";
+		<!-- servo -->
+		var ip2="169.232.87.9:50";
+        $(document).ready(function(){
+            $("#Play1").click(function(){
+                $.get("http://"+ip1+"/Play1");
+				$.get("http://"+ip2+"/ServoBeats1");
+            });
+			$("#Play2").click(function(){
+				$.get("http://"+ip1+"/Play2");
+				$.get("http://"+ip2+"/ServoBeats2");
+            });
+			$("#Play3").click(function(){
+                $.get("http://"+ip1+"/Play3");
+				$.get("http://"+ip2+"/ServoBeats3");
+            });
+			$("#Pause").click(function(){
+                $.get("http://"+ip1+"/Pause");
+				$.get("http://"+ip2+"/Pause");
+            });
+			$("#SpeedUp").click(function(){
+				$.get("http://"+ip1+"/SpeedUp");
+				$.get("http://"+ip2+"/SpeedUp");
+            });
+			$("#SpeedDown").click(function(){
+                $.get("http://"+ip1+"/SpeedDown");
+				$.get("http://"+ip2+"/SpeedDown");
+            });
+			$("#VolumeUp").click(function(){
+				$.get("http://"+ip1+"/VolumeUp");
+            });
+			$("#VolumeDown").click(function(){
+                $.get("http://"+ip1+"/VolumeDown");
+            });
+            $("#Stop").click(function(){
+                $.get("http://"+ip1+"/Stop");
+				$.get("http://"+ip2+"/Stop");					
+            });
+          });
+          
+     </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Musical Instruments - Team White</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+            <li class="sidebar-brand">
+                <a href="#top"  onclick = $("#menu-close").click(); >Musical Instruments</a>
+            </li>
+            <li>
+                <a href="#top" onclick = $("#menu-close").click(); >Home</a>
+            </li>
+            <li>
+                <a href="#controls" onclick = $("#menu-close").click(); >Controls</a>
+            </li>
+            <!-- <li>
+                <a href="#services" onclick = $("#menu-close").click(); >Services</a>
+            </li>
+            <li>
+                <a href="#portfolio" onclick = $("#menu-close").click(); >Portfolio</a>
+            </li>
+            <li>
+                <a href="#contact" onclick = $("#menu-close").click(); >Contact</a>
+            </li> -->
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header id="top" class="header">
+        <div class="text-vertical-center">
+            <h1>Musical Instruments - Team White</h1>
+            <h3>Control Center for Buzzer and Drum</h3>
+            <br>
+            <a href="#controls" class="btn btn-dark btn-lg">Start Controlling</a>
+        </div>
+    </header>
+
+    <!-- Controls -->
+    <section id="controls" class="controls">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Click on any button to send the command to the two Intel Edison boards simultaneously</h2>
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <!-- Services -->
+    <!-- The circle icons use Font Awesome's stacked icon classes. For more information, visit http://fontawesome.io/examples/ -->
+    <section id="control buttons" class="services bg-primary">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h2>Control Buttons</h2>
+                    <hr class="small">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-cloud fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Laputa</strong>
+                                </h4>
+                                <p>Hayao Miyazaki</p>
+                                <a id="Play1" class="btn btn-light">Play</a>
+                            </div>
+                        </div>
+						<div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-cloud fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Song of Secret Garden</strong>
+                                </h4>
+                                <p>Secret Garden</p>
+                                <a id="Play2" class="btn btn-light">Play</a>
+                            </div>
+                        </div>
+						<div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-cloud fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Pathetique 3rd Movement</strong>
+                                </h4>
+                                <p>Ludwig Van Beethoven</p>
+                                <a id="Play3" class="btn btn-light">Play</a>
+                            </div>
+                        </div>
+						<div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-cloud fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Pause</strong>
+                                </h4>
+                                <p>Pause the current song. Press 'Play' on the current song to resume.</p>
+                                <a id="Pause" class="btn btn-light">Pause</a>
+                            </div>
+                        </div>
+						<div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-cloud fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Stop</strong>
+                                </h4>
+                                <p>Stop playing the current song.</p>
+                                <a id="Stop" class="btn btn-light">Stop</a>
+                            </div>
+                        </div>
+						<div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-cloud fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Speed Up</strong>
+                                </h4>
+                                <p>Increase the tempo of the song.</p>
+                                <a id="SpeedUp" class="btn btn-light">Speed Up</a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-cloud fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Speed Down</strong>
+                                </h4>
+                                <p>Decrease the tempo of the song.</p>
+                                <a id="SpeedDown" class="btn btn-light">Speed Down</a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-cloud fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Volume Up</strong>
+                                </h4>
+                                <p>Increase the volume.</p>
+                                <a id="VolumeUp" class="btn btn-light">Volume Up</a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-cloud fa-stack-1x text-primary"></i>
+                            </span>
+                                <h4>
+                                    <strong>Volume Down</strong>
+                                </h4>
+                                <p>Decrease the volume</p>
+                                <a id="VolumeDown" class="btn btn-light">Volume Down</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script>
+    // Closes the sidebar menu
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    </script>
+
+</body>
+
+</html>
