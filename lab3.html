@@ -44,7 +44,17 @@
                 $.get("http://"+ip1+"/Stop");
 				$.get("http://"+ip2+"/Stop");					
             });
+            $("#Stop").click(function(){
+                $.get("http://"+ip1+"/Mode");
+                $.get("http://"+ip2+"/Mode");
+            });
           });
+          
+          window.setInterval("reloadIFrame();", 1000);
+          function reloadIFrame() {
+              document.getElementById("drum_frame").src=("http://"+ip2);
+              document.getElementById("piano_frame").src=("http://"+ip1);
+          }
           
      </script>
     <meta charset="utf-8">
@@ -251,8 +261,48 @@
                                 <a id="VolumeDown" class="btn btn-light">Volume Down</a>
                             </div>
                         </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-cloud fa-stack-1x text-primary"></i>
+                                </span>
+                                <h4>
+                                    <strong>Player Mode</strong>
+                                </h4>
+                                <p>Play!</p>
+                                <a id="PlayerMode" class="btn btn-light">Player Mode</a>
+                            </div>
+                        </div>
                     </div>
                     <!-- /.row (nested) -->
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+    
+    
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h2>Currently you are playing...</h2>
+                    <hr class="small">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <iframe id="drum_frame" marginwidth="0" marginheight="0" width=100% height="280" scrolling="no" frameborder=0 src="http://+@(ip2)"></iframe>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="portfolio-item">
+                                <iframe id="piano_frame" marginwidth="0" marginheight="0" width=100% height="280" scrolling="no" frameborder=0 src="http://+@(ip1)"></iframe>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- /.col-lg-10 -->
             </div>
